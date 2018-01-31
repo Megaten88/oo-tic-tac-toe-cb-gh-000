@@ -26,8 +26,8 @@ class TicTacToe
     input.to_i-1
   end
 
-  def move(board, index, current_player)
-    board[index] = current_player
+  def move(index, current_player)
+    @board[index] = current_player
   end
 
   WIN_COMBINATIONS = [
@@ -41,13 +41,13 @@ class TicTacToe
     [6,4,2]
   ]
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do |win_combination|
       winx = win_combination.all? do |cell|
-        board[cell]=="X"
+        @board[cell]=="X"
       end
       wino = win_combination.all? do |cell|
-        board[cell]=="O"
+        @board[cell]=="O"
       end
       if winx || wino
         return win_combination
@@ -56,17 +56,17 @@ class TicTacToe
     return false
   end
 
-  def full?(board)
-     board.all? do |cell|
+  def full?
+     @board.all? do |cell|
        cell!=" "
      end
   end
 
-  def draw?(board)
-    if won?(board)
+  def draw?
+    if won?
       return false
     else
-      if full?(board)
+      if full?
         return true
       else
         return false
