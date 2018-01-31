@@ -101,9 +101,9 @@ class TicTacToe
     end
   end
 
-  def turn_count(board)
+  def turn_count
     count=0
-    for value in board do
+    for value in @board do
       value!=" " ? count+=1: count = count
     end
     return count
