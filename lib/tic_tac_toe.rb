@@ -113,14 +113,14 @@ class TicTacToe
     turn_count.even? ? "X":"O"
   end
 
-  def play(board)
-    until over?(board)
-      turn(board)
-      over?(board)
+  def play
+    until over?
+      turn
+      over?
     end
-    if won?(board)
-      puts "Congratulations #{winner(board)}!"
-    elsif draw?(board)
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
       puts "Cat\'s Game!"
     end
   end
