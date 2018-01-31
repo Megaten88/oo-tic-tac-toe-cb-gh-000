@@ -78,10 +78,10 @@ class TicTacToe
     won?||full?||draw?
   end
 
-  def winner(board)
-    win = won?(board)
+  def winner
+    win = won?
     if win
-      winner = board[win[0]]
+      winner = @board[win[0]]
     else
       return nil
     end
